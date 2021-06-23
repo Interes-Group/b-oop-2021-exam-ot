@@ -1,6 +1,6 @@
 package sk.stuba.fei.uim.oop;
 
-public class ExamRT {
+public class ExamOT {
     public static void main(String[] args) {
         
     }
