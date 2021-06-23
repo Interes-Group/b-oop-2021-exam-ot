@@ -1,38 +1,39 @@
-# Riadny termín \[60b], 3.6.2021 14:00
+# Opravný termín \[60b], 24.6.2021 14:00
 B-OOP 2021
 
-Vytvorte oknovú aplikáciu, ktorá umožní používateľovi kresliť a presúvať zadaný tvar. Aplikácia bude mať nasledovnú funkcionalitu (40 bodov):
+Vytvorte oknovú aplikáciu, ktorá umožní používateľovi "pečiatkovať" dva tvary a spájať ich pomocou čiar. Aplikácia bude mať nasledovnú funkcionalitu (40 bodov):
 
-1. Vytvorenie hlavného okna, ktoré bude obsahovať Ovládacie prvky a Kresliacu plochu \[5b].
-2. Kreslenie jedného tvaru: strom \[15b].
-3. Presúvanie už nakreslených tvarov \[15b].
-4. Voľba farby geometrického tvaru prostredníctvom [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) \[4b].
-5. Zatvorenie aplikácie cez tlačidlo na zatvorenie aplikácie poskytnuté operačným systémom \[1b].
+1. Vytvorenie hlavného okna, ktoré bude obsahovať Ovládacie prvky a Kresliacu plochu \[4b].
+2. Sfunkčnenie ovládacích prvkov pomocou Listenerov \[5b].
+3. "Pečiatkovanie" dvoch tvarov: strom a dom \[10b].
+4. Prepájanie tvarov pomocou čiar \[15b].
+5. Zmena farieb počas kreslenia a vrstvenie elementov \[5b].
+6. Zatvorenie aplikácie cez tlačidlo na zatvorenie aplikácie poskytnuté operačným systémom \[1b].
 
 ## Podrobný popis k bodu 1:
 
-Väčšinu plochy okna bude zaberať Kresliaca plocha. V dolnej časti okna sa budú nachádzať Ovládacie
-prvky. Ovládacie prvky budú tvoriť: [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) “Strom”, [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) “Presun”, [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) “Ďalšia farba” a [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html). Každý z týchto prvkov musí zaberať štvrtinu celkového miesta vyhradeného pre ovládacie prvky.
+Väčšinu plochy okna bude zaberať Kresliaca plocha. V hornej časti okna sa budú nachádzať Ovládacie
+prvky. Ovládacie prvky budú tvoriť: [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) “Strom”, [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) “Dom”, [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) “Cesta” a [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html). Každý z týchto prvkov musí zaberať štvrtinu celkového miesta vyhradeného pre ovládacie prvky.
 
 ## Podrobný popis k bodu 2:
 
-Stlačením príslušného tlačidla si vyberieme kreslenie STROMU [5b]. Po stlačení tlačidla myši (kliknutí) a následným ťahaním, sa na plátno vykresľuje geometrický tvar, a v Labeli (medzi ovládacími prvkami) sa nastaví text, ktorý bude hovoriť, že je aktívne **KRESLENIE**. Podľa aktuálnej polohy kurzora sa dynamicky mení šírka aj výška. Po pustení tlačidla myši sa ukončí kreslenie geometrického tvaru, t.j. jeho veľkosť sa zafixuje, potom sme pripravení kresliť ďalší tvar. Vykreslený tvar musí na kresliacej ploche zostať vykreslený aj po vykreslení ďalšieho tvaru. Takisto si každý tvar musí zachovávať svoju farbu (farba sa bude meniť Button-om, pozri bod 4). Strom musí mať pri kreslení zachované proporcie, ako je znázornené na obrázku.
-
-![image](./strom.svg)
-
-**Pozn.:** Pri kreslení (ťahaní myšou) zvoleného geometrického tvaru sa musí uvažovať, do akého smeru sa ťahá. Vtedy je potrebné domyslieť, ako sa budú prepočítavať koncové súradnice geometrického tvaru. Ak implementujete prepočítavanie koncového bodu v závislosti od všetkých smerov ťahania myšou (sprava hore - doľava dole, zľava dole - doprava hore, zľava hore - doprava dole a opačne) získate za tento bod plný počet [10b]. Ak neimplementujete všetky 4 alternatívy prepočítavania súradníc koncového bodu (ťahania myšou), získate maximálne polovicu zo stanovených bodov. (max 5b).
+Po spustení programu je zvolený ľubovoľný z módov "Dom" alebo "Strom". Aktuálne zvolený mód sa zobrazuje ako text na [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html) elemente na ovládacom paneli ("Dom", "Strom", "Cesta"). Aktívny mód sa zmení iba kliknutím na príslušný [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) na ovládacom panely. Panel má nastavenú farbu pozadia podľa aktuálkne zvolenej farby (pozri bod 5).
 
 ## Podrobný popis k bodu 3:
 
-Stlačením príslušného tlačidla si vyberieme mód PRESÚVANIA a Labeli (medzi ovládacími prvkami) sa nastaví text, ktorý bude hovoriť, že je aktívne **PRESÚVANIE**. Po stlačení tlačidla myši (kliknutí) na nejaký už nakreslený tvar a následnom ťahaní sa zvolený tvar bude presúvať spolu s pohybom myši. Po pustení tlačidla myši sa presúvanie ukončí, t.j. presúvaný tvar zostane na svojom novom mieste. Presúvaný tvar sa vykresľuje iba spolu s myšou a nezostáva na svojej pôvodnej pozícii.
+Keď je zvolený jeden z módov "Dom" alebo "Strom", tak používateľ má možnosť pridávať príslušné tvary na kresliacu plochu. Kreslenie prebieha formou pečiatkovania, teda po kliknutí sa na mieste na ktoré sa kliklo vykreslí zvolený tvar \[2b]. Tvar sa vykresľuje tak, že jeho stred sa nachádza v mieste kam klikla myš \[3b]. Tvary nakreslené v minulosti zostávajú po kliknutí na kresliacej ploche. Tvary majú fixný rozmer 50\*50px. Na pozícii myši sa zobrazuje polopriehľadný náhľad aktuálne zvoleného tvaru/pečiatky \[5b]. Tvar aj náhľad sa vykresľuje aktuálne zvolenou farbou (pozri bod 5). Pokiaľ funguje vykresľovanie iba jedného tvaru je úloha hodnotenámaximálne polovičným počtom bodov. Tvary majú mať nasledovné proporcie:
 
-**Pozn.:** Pri presúvaní (ťahaní myšou) zvoleného tvaru je potrebné brať do úvahy relatívnu polohy myši ku presúvanému tvaru. Za implementáciu presúvania akýmkoľvek spôsobom je možné získať maximálne 10b. Pokiaľ sa presúvanie uskutočňuje relatívne ku miestu kde bol tvar vybratý myšou (t.j. keď kliknem do stredu útvaru presúvam ho tak, že myš zostáva v strede) dá sa za presúvanie získať plný počet 15b.
-
-Na detekciu kliknutia myši na tvar môžete použiť napríklad metódu [contains](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html#contains(double,double)) triedy [Shape](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html)
+![image](./strom.svg)
 
 ## Podrobný popis k bodu 4:
 
-Spomedzi ovládacích prvkov bude Button "Ďalšia farba" slúžiť na výber farby a Label na grafické znázornenie aktuálne  zvolenej farby. Program umožňuje zvoliť minimálne 3 farby v nejakom fixnom poradí (napr. červená > modrá > zelená). Tlačidlom sa aktívna farba zmení na nasledujúcu farbu v poradí. Pokiaľ sa v zozname farieb nachádzame na poslednom prvku, tak za ním nasleduje opäť prvá farba (t.j. červená > modrá > zelená > červená > ...). Práve kreslené geometrické tvary majú farbu zvolenú podľa aktuálnej farby. Farby môžu byť ľubovoľné, podmienkou ale je, aby boli viditeľné na kresliacej ploche. Po výbere farby sa zmení farba Label-u podľa aktuálnej farby. Zmena farby ovplyvňuje len nové geometrické tvary, už nakreslené geometrické tvary si musia zachovať svoju farbu!
+Keď je zvolený mód "Cesta" je možné prepájať domy a stromy čiarami. Cestu (čiaru) je možné začať kresliť stlačením myši nad nejakým nakresleným tvarom. Následne sa pri ťahaní myši kreslí čiara medzi stredom tvaru a aktuálnou pozíciou myši. Pokiaľ je tlačidlo myši pustené nad prázdnou plochou, čiara zmyzne. Pokiaľ je tlačidlo myši pustené nad tvar opačného druhu, ako je začiatok čiary, tak sa kreslenie čiary dokončí a čiara bude spájať stredy nakreslených tvarov \[10b]. Čiarami je možné spájať iba tvary opačného druhu (dom - strom, strom - dom) \[5b]. Čiary sa vždy vykresľujú čiernou farbou.
+
+Na detekciu kliknutia myši na tvar môžete použiť napríklad metódu [contains](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html#contains(double,double)) triedy [Shape](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html)
+
+## Podrobný popis k bodu 5:
+
+Program obsahuje minimálne 3 farby v nejakom fixnom poradí (napr. červená > modrá > zelená). Na začiatku programu je zvolená prvá farba z poradia. Po nakreslení ľubovoľného z tvarou sa aktuálna farba zmení na nasledujúcu v poradí. Po zmene farby sa zmení farba Label-u podľa aktuálnej farby. Zmena farby ovplyvňuje len nové geometrické tvary, už nakreslené geometrické tvary si musia zachovať svoju farbu!
 
 ## Hodnotenie
 
@@ -50,11 +51,13 @@ Okrem funkcionality budú hodnotené aj princípy Objektovo orientovaného progr
 * nepoužitie statických metód ani nekonštantných statických premenných, \[3b]
 * nepoužitie duplicitných kódov \[3b]
 
+Pokiaľ vaše riešenie neobsahuje dostatok implementácie je možné za OOP získať maximálne \[10b].
+
 ## Odovzdanie
 
 Vypracovanie skúšky odovzdajte cez Github classroom do miesta odovzdania nato určenom. Odovzdáva sa obsah celého projektu. Na vypracovanie písomky je vyhradený čas 3 hodiny.
 
-# Exam RT \[60pts], 3.6.2021 14:00
+# Exam OT \[60pts], 24.6.2021 14:00
 B-OOP 2021
 
 Your task is to create a java window application. The application allows the user to draw and move a given shape. The application has the following functionality (40 points):
