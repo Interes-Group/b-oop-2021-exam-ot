@@ -27,13 +27,15 @@ Keď je zvolený jeden z módov "Dom" alebo "Strom", tak používateľ má možn
 
 ## Podrobný popis k bodu 4:
 
-Keď je zvolený mód "Cesta" je možné prepájať domy a stromy čiarami. Cestu (čiaru) je možné začať kresliť stlačením myši nad nejakým nakresleným tvarom. Následne sa pri ťahaní myši kreslí čiara medzi stredom tvaru a aktuálnou pozíciou myši. Pokiaľ je tlačidlo myši pustené nad prázdnou plochou, čiara zmyzne. Pokiaľ je tlačidlo myši pustené nad tvar opačného druhu, ako je začiatok čiary, tak sa kreslenie čiary dokončí a čiara bude spájať stredy nakreslených tvarov \[10b]. Čiarami je možné spájať iba tvary opačného druhu (dom - strom, strom - dom) \[5b]. Čiary sa vždy vykresľujú čiernou farbou.
+Keď je zvolený mód "Cesta" je možné prepájať domy a stromy čiarami. Cestu (čiaru) je možné začať kresliť stlačením myši nad nejakým nakresleným tvarom. Následne sa pri ťahaní myši kreslí čiara medzi stredom tvaru a aktuálnou pozíciou myši. Pokiaľ je tlačidlo myši pustené nad prázdnou plochou, čiara zmizne. Pokiaľ je tlačidlo myši pustené nad tvar opačného druhu, ako je začiatok čiary, tak sa kreslenie čiary dokončí a čiara bude spájať stredy nakreslených tvarov \[10b]. Čiarami je možné spájať iba tvary opačného druhu (dom - strom, strom - dom) \[5b]. Čiary sa vždy vykresľujú čiernou farbou.
 
 Na detekciu kliknutia myši na tvar môžete použiť napríklad metódu [contains](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html#contains(double,double)) triedy [Shape](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html)
 
 ## Podrobný popis k bodu 5:
 
-Program obsahuje minimálne 3 farby v nejakom fixnom poradí (napr. červená > modrá > zelená). Na začiatku programu je zvolená prvá farba z poradia. Po nakreslení ľubovoľného z tvarou sa aktuálna farba zmení na nasledujúcu v poradí. Po zmene farby sa zmení farba Label-u podľa aktuálnej farby. Zmena farby ovplyvňuje len nové geometrické tvary, už nakreslené geometrické tvary si musia zachovať svoju farbu!
+Program obsahuje minimálne 3 farby v nejakom fixnom poradí (napr. červená > modrá > zelená). Na začiatku programu je zvolená prvá farba z poradia (tým pádom je takou farbou podfarbený aj label). Po nakreslení ľubovoľného z tvarou sa aktuálna farba zmení na nasledujúcu v poradí. Po zmene farby sa zmení farba Label-u podľa aktuálnej farby. Zmena farby ovplyvňuje len nové geometrické tvary, už nakreslené geometrické tvary si musia zachovať svoju farbu! 
+
+Poradie vykreslovania prvkov musí byť také, že: Tvary > Čiari > Náhľad zvoleného tvaru (ak je zvolený mód Dom alebo Strom) 
 
 ## Hodnotenie
 
@@ -51,7 +53,7 @@ Okrem funkcionality budú hodnotené aj princípy Objektovo orientovaného progr
 * nepoužitie statických metód ani nekonštantných statických premenných, \[3b]
 * nepoužitie duplicitných kódov \[3b]
 
-Pokiaľ vaše riešenie neobsahuje dostatok implementácie je možné za OOP získať maximálne \[10b].
+Pokiaľ vaše riešenie neobsahuje dostatok implementácie je možné za OOP získať maximálne \[10b]. 
 
 ## Odovzdanie
 
