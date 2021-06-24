@@ -35,7 +35,7 @@ Na detekciu kliknutia myši na tvar môžete použiť napríklad metódu [contai
 
 Program obsahuje minimálne 3 farby v nejakom fixnom poradí (napr. červená > modrá > zelená). Na začiatku programu je zvolená prvá farba z poradia (tým pádom je takou farbou podfarbený aj label). Po nakreslení ľubovoľného z tvarou sa aktuálna farba zmení na nasledujúcu v poradí. Po zmene farby sa zmení farba Label-u podľa aktuálnej farby. Zmena farby ovplyvňuje len nové geometrické tvary, už nakreslené geometrické tvary si musia zachovať svoju farbu! 
 
-Poradie vykreslovania prvkov musí byť také, že: Tvary > Čiari > Náhľad zvoleného tvaru (ak je zvolený mód Dom alebo Strom) 
+Poradie vykreslovania prvkov musí byť také, že: Tvary > Čiary > Náhľad zvoleného tvaru (ak je zvolený mód Dom alebo Strom) 
 
 ## Hodnotenie
 
