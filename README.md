@@ -17,13 +17,14 @@ prvky. Ovládacie prvky budú tvoriť: [JButton](https://docs.oracle.com/en/java
 
 ## Podrobný popis k bodu 2:
 
-Po spustení programu je zvolený ľubovoľný z módov "Dom" alebo "Strom". Aktuálne zvolený mód sa zobrazuje ako text na [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html) elemente na ovládacom paneli ("Dom", "Strom", "Cesta"). Aktívny mód sa zmení iba kliknutím na príslušný [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) na ovládacom panely. Panel má nastavenú farbu pozadia podľa aktuálne zvolenej farby (pozri bod 5).
+Po spustení programu je zvolený ľubovoľný z módov "Dom" alebo "Strom". Aktuálne zvolený mód sa zobrazuje ako text na [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html) elemente na ovládacom paneli ("Dom", "Strom", "Cesta"). Aktívny mód sa zmení iba kliknutím na príslušný [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) na ovládacom panely. Label má nastavenú farbu pozadia podľa aktuálne zvolenej farby (pozri bod 5).
 
 ## Podrobný popis k bodu 3:
 
 Keď je zvolený jeden z módov "Dom" alebo "Strom", tak používateľ má možnosť pridávať príslušné tvary na kresliacu plochu. Kreslenie prebieha formou pečiatkovania, teda po kliknutí sa na mieste na ktoré sa kliklo vykreslí zvolený tvar \[2b]. Tvar sa vykresľuje tak, že jeho stred sa nachádza v mieste kam klikla myš \[3b]. Tvary nakreslené v minulosti zostávajú po kliknutí na kresliacej ploche. Tvary majú fixný rozmer 50\*50px. Na pozícii myši sa zobrazuje polopriehľadný náhľad aktuálne zvoleného tvaru/pečiatky \[5b]. Tvar aj náhľad sa vykresľuje aktuálne zvolenou farbou (pozri bod 5). Pokiaľ funguje vykresľovanie iba jedného tvaru je úloha hodnotená maximálne polovičným počtom bodov. Tvary majú mať nasledovné proporcie:
 
 ![image](./strom.svg)
+![image](./dom.svg)
 
 ## Podrobný popis k bodu 4:
 
@@ -62,37 +63,41 @@ Vypracovanie skúšky odovzdajte cez Github classroom do miesta odovzdania nato 
 # Exam OT \[60pts], 24.6.2021 14:00
 B-OOP 2021
 
-Your task is to create a java window application. The application allows the user to draw and move a given shape. The application has the following functionality (40 points):
+Your task is to create a java window application. The application allows the user to "stamp" two shapes and connect them with lines. The application has the following functionality (40 points):
 
-1. Creation of the main window, that will contain control elements and a drawing area \[5pts].
-2. Drawing of one shape: a tree \[15pts].
-3. Moving of the drawn shapes \[15pts].
-4. Selection of the drawing color through a [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) \[4pts].
-5. Closing the application with the "close window" button provided by the operating system \[1pt].
+1. Creation of the main window, that will contain control elements and a drawing area \[4pts].
+2. Implementation of the functionality of the controll elements \[5pts].
+3. "Stamping" of two shapes: a house and a tree \[10pts].
+4. Connecting the shapes with lines \[15pts].
+5. Changing the colour of the shapes and the layering of elements \[5pts].
+6. Closing the application with the "close window" button provided by the operating system \[1pt].
 
 ## Description for bullet point 1:
 
-Most of the window area will be covered by the drawing area. THe bottom part of the window will contain the control elements. The control elements consist of: [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) "Tree", [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) "Move", [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) "Next color" and a [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html). Each of these elements should cover a fourth of the available space for control elements.
+Most of the window area will be covered by the drawing area. The top part of the window will contain the control elements. The control elements consist of: [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) "Tree", [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) "House", [JButton](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html) "Road" and a [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html). Each of these elements should cover a fourth of the available space for control elements.
 
 ## Description for bullet point 2:
 
-By pressing the appropriate button we select drawing of the TREE [5pts]. After pressing the left mouse button and draging the mouse the selected shape will begin drawing on to the drawing area. The label (from the control elements) will have its text changed to **DRAWING**. Based on the current position of the mouse, the width and height of the drawn shape will be dynamically adjusted. After letting go of the left mouse button the drawing of the shape will complete, i.e. its position and size fill be fixed. The drawn shape must remain on the drawing area after drawing additional shapes. Each shape must maintain its color (the color will change based on a button, see bullet point 4). The tree shape must maintain the proportions depicted on the image bellow.
-
-![image](./strom.svg)
-
-**Note:** When drawing (dragging the mouse) a shape the position and direction of the mouse must be considered. You must consider how to calculate the position and size of the selected shape. If you implement the drawing of the shape into all four direction the mouse can be dragged in (top right to bottom left, bottom left to top right, top left to bottom right, bottom right to top left) you will receive the full [10pts]. If you do not implement all four possibilities you will be able to recive at most a half of the available points (max 5pts).
+When the program starts, either the "House" or the "Tree" drawing mode is selected. The currently selected mode is displayed as text on the [JLabel](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html) on the controll panel ("House", "Tree", "Road"). The currently selected mode changes only by pressing the appropriate buttons on the control panel. The label has a background color according to the currently selected color (see bullet point 5).
 
 ## Description for bullet point 3:
 
-By pressing the appropriate button the **MOVING** mode will be selected and the appropriate text of the label (in the controll panel) will be set. After pressing the left mouse button on an already drawn shape and then dragging the mouse, the selected shape will move with the mouse. After letting go of the left mouse button the movement of the shape will finish i.e. the shape will remain fixed in its new place. THe dragged shape will be drawn only at the position of the mouse and will not remain at its original location.
+When either the "House" or the "Tree" mode is selected, the user can add the selected shape to the drawing area. The drawing is done by stamping the selected element, that is after the user clicks on the drawing area the selected shape will be drawn at the clicked location \[2pts]. The shapes are positioned in such a way they are centered on the mouse click position \[3pts]. Shapes drawn in the past remain on the drawing area. The shapes have a fixed dimension o 50\*50px. A preview of the currenlty selected shape/stamp is displayed at the position of the mouse \[5pts]. Both the shape and the preview are displayed with the currently selected color (see bullet point 5). If only one shape is implemented you can get at most half of the points for this section. The shapes have the following proportions:
 
-**Note:** When moving (dragging the mouse) of a selected shape you must consider the relative position of the mouse to the moved shape. For implementing the dragging in any way at most 10pts can be received. If the movement is performed relative to the click location of the mouse (i.e. when dragging from the center of the shape the mouse remains in the center of the shape during the movement) you will receive the full 15pts.
+![image](./strom.svg)
+![image](./dom.svg)
+
+## Description for bullet point 4:.
+
+When the currently selected mode is "Road" the user can connect trees and houses with lines. The road (line) can be started by pressing the mouse on top of some shape. When dragging the mouse a line is drawn between the center of the selected shape and the current position of the mouse. If the the mouse button is let go above empty space, the line disappears. If the mouse button is let go above a shape with the type oposite to the start of the line, the line will be completed and will connect the centers of the two shapes \[10pts]. Only shapes of oposite types (house - tree, tree - house) can be connected with lines \[5pts]. Lines are always drawn with black color.
 
 You can use the [contains](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html#contains(double,double)) method of the [Shape](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Shape.html) class to determine whether the mouse was pressed inside of a shape.
 
-## Description for bullet point 4:
+## Description for bullet point 5:
 
-Among the control elements the Button "Next color" will serve the purpose of selecting the drawing color. The Lable will display the currently selected color. The program allows the selection of at least 3 different colors in some fixed order (e.g. red > blue > green). By pressing the button the selected color will change to the next color in the ordering. If the currently selected color is the last color in the ordering, the next color is the first color of the ordering (i.e. red > blue > green > red > ...). The currently drawn shapes have the currently selected color. You can choose the available colors freely, but they must be clearly visible on the drawing area. After selecting a color the color of the Label will change based on the currently selected color. The change of the color affect only new shapes, the shapes that are already drawn must maintain their color!
+The program defines at least 3 different colors in some fixed order (e.g. red > blue > green). At the start of the application the first color is selected (and therefore the label has the selected colour as its background). Whenever a shape is drawn the current color is changed to the next color. The change of the color affects only the new shapes, the shapes that are already drawn must maintain their color!
+
+The order in which the elements are drawn must be as follows: Shapes > Lines > shape preview (if either the "house", or the "tree" mode is selected)
 
 ## Grading
 
@@ -110,9 +115,7 @@ Appart from the functionality, the principles of Object-Oriented Programming wil
 * don't use static methods, or non-constant static variables, \[3pts]
 * don't have code duplication \[3pts]
 
-## Odovzdanie
-
-Vypracovanie skúšky odovzdajte cez Github classroom do miesta odovzdania nato určenom. Odovzdáva sa obsah celého projektu. Na vypracovanie písomky je vyhradený čas 3 hodiny.
+If the code does not contain enough implementation, you can get at most \[10pts] for conforming to the OOP principles.
 
 ## Handing in the assigment
 
