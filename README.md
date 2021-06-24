@@ -23,8 +23,8 @@ Po spustení programu je zvolený ľubovoľný z módov "Dom" alebo "Strom". Akt
 
 Keď je zvolený jeden z módov "Dom" alebo "Strom", tak používateľ má možnosť pridávať príslušné tvary na kresliacu plochu. Kreslenie prebieha formou pečiatkovania, teda po kliknutí sa na mieste na ktoré sa kliklo vykreslí zvolený tvar \[2b]. Tvar sa vykresľuje tak, že jeho stred sa nachádza v mieste kam klikla myš \[3b]. Tvary nakreslené v minulosti zostávajú po kliknutí na kresliacej ploche. Tvary majú fixný rozmer 50\*50px. Na pozícii myši sa zobrazuje polopriehľadný náhľad aktuálne zvoleného tvaru/pečiatky \[5b]. Tvar aj náhľad sa vykresľuje aktuálne zvolenou farbou (pozri bod 5). Pokiaľ funguje vykresľovanie iba jedného tvaru je úloha hodnotená maximálne polovičným počtom bodov. Tvary majú mať nasledovné proporcie:
 
-<img src="strom.svg" alt="drawing" width="200"/>
-<img src="dom.svg" alt="drawing" width="200"/>
+<img src="strom.svg" alt="drawing" width="400"/>
+<img src="dom.svg" alt="drawing" width="400"/>
 <!-- ![image](./strom.svg) -->
 <!-- ![image](./dom.svg) -->
 
