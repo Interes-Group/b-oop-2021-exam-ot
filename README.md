@@ -25,8 +25,6 @@ Keď je zvolený jeden z módov "Dom" alebo "Strom", tak používateľ má možn
 
 <img src="strom.svg" alt="drawing" width="400"/>
 <img src="dom.svg" alt="drawing" width="400"/>
-<!-- ![image](./strom.svg) -->
-<!-- ![image](./dom.svg) -->
 
 ## Podrobný popis k bodu 4:
 
@@ -86,8 +84,8 @@ When the program starts, either the "House" or the "Tree" drawing mode is select
 
 When either the "House" or the "Tree" mode is selected, the user can add the selected shape to the drawing area. The drawing is done by stamping the selected element, that is after the user clicks on the drawing area the selected shape will be drawn at the clicked location \[2pts]. The shapes are positioned in such a way they are centered on the mouse click position \[3pts]. Shapes drawn in the past remain on the drawing area. The shapes have a fixed dimension o 50\*50px. A preview of the currenlty selected shape/stamp is displayed at the position of the mouse \[5pts]. Both the shape and the preview are displayed with the currently selected color (see bullet point 5). If only one shape is implemented you can get at most half of the points for this section. The shapes have the following proportions:
 
-![image](./strom.svg)
-![image](./dom.svg)
+<img src="strom.svg" alt="drawing" width="400"/>
+<img src="dom.svg" alt="drawing" width="400"/>
 
 ## Description for bullet point 4:.
 
